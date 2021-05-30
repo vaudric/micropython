@@ -1,0 +1,18 @@
+{
+  "wifi": {
+    "essid": "###########",
+    "password": "##########",
+    "dhcp_hostname": "esp8266"
+  },
+  "mqtt": {
+    "cid": "",
+    "init": 0
+  },
+  "hw": {
+    "id": "esp8266"
+  },
+  "init": {
+    "ap": false,
+    "sta": false
+  }
+}
