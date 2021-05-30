@@ -1,3 +1,10 @@
+"""
+mDNS (slimDNS) + WebServer (Picoweb)
+
+Not pretty but it works...
+
+"""
+
 import uasyncio as asyncio
 import picoweb
 from mdns import SlimDNSServer
