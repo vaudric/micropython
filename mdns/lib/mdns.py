@@ -10,7 +10,6 @@ Ideally slimDNS should be asyncio ready at the core...
 Not pretty but it works...
 
 """
-# mDNS
 
 from select import select
 import network
