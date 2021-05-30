@@ -1,7 +1,16 @@
+"""
+mDNS (slimDNS)
+
+Special thanks to @nickovs, @peterhinch (pythoncoder), @ameersohail0
+* https://forum.micropython.org/viewtopic.php?t=3027
+* https://forum.micropython.org/viewtopic.php?f=15&t=4398
+* https://github.com/nickovs/slimDNS/blob/master/slimDNS.py
+
+Ideally slimDNS should be asyncio ready at the core...
+Not pretty but it works...
+
+"""
 # mDNS
-# https://forum.micropython.org/viewtopic.php?t=3027
-# https://forum.micropython.org/viewtopic.php?f=15&t=4398
-# https://github.com/nickovs/slimDNS/blob/master/slimDNS.py
 
 from select import select
 import network
@@ -14,7 +23,7 @@ class SlimDNSServer(SlimDNSServerBase):
         while True:
             readers, _, _ = select([self.sock], [], [], None)
             self.process_waiting_packets()
-            await asyncio.sleep_ms(100)
+            await asyncio.sleep_ms(100) # Adding a delay 100ms instead of 0 significantly improved connection perf on Picoweb...
 
     def run(self):
         loop = asyncio.get_event_loop()
