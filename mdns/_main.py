@@ -3,6 +3,11 @@ mDNS (slimDNS) + WebServer (Picoweb)
 
 Not pretty but it works...
 
+- picoweb > mpy-cross
+- slimDNS > mpy-cross
+extend slimDNSServer to add "virtual" asyncio "support"
+
+Run and go to http://esp8266-upy.local
 """
 
 import uasyncio as asyncio
